@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tutorial2">
         <activity
+            android:name=".StudentService"
+            android:exported="true" />
+        <activity
+            android:name=".StudentForm"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
