@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         });
+
+        Button services = (Button) findViewById(R.id.services);
+        services.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StudentService.class);
+                startActivityForResult(intent, 2);
+            }
+        });
     }
 
     @Override
@@ -36,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 1 && resultCode == RESULT_OK){
             String successMessage = (String) intent.getExtras().get("response");
             Toast.makeText(MainActivity.this, "Thank for your submission, "+successMessage, Toast.LENGTH_SHORT).show();
+        }
+        if (requestCode == 2 && resultCode == RESULT_OK){
+            String successMessage = (String) intent.getExtras().get("response");
+            Toast.makeText(MainActivity.this, "Thank for using " + successMessage + " service", Toast.LENGTH_SHORT).show();
         }
     }
 }
